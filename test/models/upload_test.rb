@@ -35,4 +35,8 @@ class UploadTest < ActiveSupport::TestCase
     assert_equal 4, Purchase.count
   end
   
+  should "calculate the total amount of revenue for all purchases" do
+    assert_equal 95.0, @upload.calculate_revenue
+  end
+  
 end

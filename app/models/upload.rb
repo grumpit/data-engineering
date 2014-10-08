@@ -9,6 +9,12 @@ class Upload < ActiveRecord::Base
   
   after_create :process_data
   
+  def calculate_revenue
+    total = 0
+    purchases.joins(:item).each {|purchase| total += purchase.quantity * purchase.item.price }
+    total
+  end
+  
   private
   
   def process_data
