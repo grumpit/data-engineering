@@ -36,6 +36,7 @@ end
 
 group :test do
   gem 'simplecov', :require => false
+  gem 'shoulda'
   gem 'shoulda-context'
   gem 'shoulda-matchers'
 end
