@@ -1,6 +1,8 @@
 class Upload < ActiveRecord::Base
   mount_uploader :file, DataFileUploader
   belongs_to :user
+  has_many :purchases
+  
   validates :file, :data, presence: true
   
   serialize :data, Array
@@ -19,6 +21,7 @@ class Upload < ActiveRecord::Base
       purchase = purchaser.purchases.find_or_initialize_by(item: item)
       purchase.quantity += row['purchase count'].to_i
       purchase.save!
+      purchases <<  purchase
     end
     self.processed = true
     save!

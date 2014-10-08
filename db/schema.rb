@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008182233) do
+ActiveRecord::Schema.define(version: 20141008190447) do
 
   create_table "items", force: true do |t|
     t.string   "description"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20141008182233) do
     t.integer  "quantity",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "upload_id"
   end
 
   create_table "uploads", force: true do |t|

@@ -2,6 +2,7 @@ require 'test_helper'
 
 class UploadTest < ActiveSupport::TestCase
   should belong_to :user
+  should have_many :purchases
   should validate_presence_of :file
   should validate_presence_of :data
   
