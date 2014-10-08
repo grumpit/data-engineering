@@ -1,0 +1,11 @@
+<%= content_tag_for :tr, upload do %>
+  <td><%= File.basename(upload.file_url) %></td>
+  <td><%= upload.created_at.strftime('%b %e, %Y') %></td>
+  <td>
+    <%- if upload.processed? -%>
+      <%= number_to_currency upload.calculate_revenue %>
+    <%- else -%>
+      
+    <%- end -%>
+  </td>
+<%- end -%>

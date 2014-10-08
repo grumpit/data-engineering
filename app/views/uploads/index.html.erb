@@ -1,0 +1,21 @@
+<section class="uploads">
+  <%- if @uploads.present? -%>
+    <%= link_to 'Add another file', new_upload_path %>
+    <table>
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Uploaded</th>
+          <th>Gross Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @uploads %>
+      </tbody>
+    </table>
+  <%- else -%>
+    <p>
+      No files have been uploaded yet. <%= link_to 'Upload a file', new_upload_path %>
+    </p>
+  <%- end -%>
+</section>

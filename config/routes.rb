@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
+  resources :uploads, only: [:new, :create, :index]
+  
   root to: 'site#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
