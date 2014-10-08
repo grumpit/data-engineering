@@ -20,8 +20,7 @@ Make sure your ruby version manager is using a local version of 2.1.2
 Open your browser and navigate to `http://localhost:3000`
 
 ## Running tests
-The test suite can be run by using rake:
-    $ bundle exec rake test
+The test suite can be run by using rake: `$ bundle exec rake test`
 
 ## Approach
 
@@ -37,5 +36,5 @@ I set it up so the data would get serialized to the model and then that model ge
 
 ### Data Model
 
-I set up the data model in such a way that if desired in the future, revenue could easily be broken down by purchaser or merchant in addition to by file that has been uploaded. I made sure to avoid ambiguous column names where applicable (i.e. 'quantity' on the purchases table instead of 'count'; changed my initial 'filename' on the uploads table to 'file' when I remembered carrierwave has an internal method called `filename` that it uses)
+I set up the data model in such a way that if desired in the future, revenue could easily be broken down by purchaser or merchant in addition to by file that has been uploaded. I made sure to avoid ambiguous column names where applicable (i.e. `quantity` on the purchases table instead of `count`; changed my initial `filename` on the uploads table to `file` when I remembered carrierwave has an internal method called `filename` that it uses)
 
