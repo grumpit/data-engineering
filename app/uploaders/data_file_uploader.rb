@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require 'csv'
 class DataFileUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -27,6 +27,8 @@ class DataFileUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
+  
+  process :serialize_data
   # def scale(width, height)
   #   # do something
   # end
@@ -41,7 +43,12 @@ class DataFileUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(tab)
   end
-
+  
+  
+  def serialize_data
+    CSV.foreach(file.file, headers: true, col_sep: "\t") {|row| model.data << row}
+  end
+  
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
