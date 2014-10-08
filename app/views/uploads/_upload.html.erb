@@ -1,0 +1,5 @@
+<%= content_tag_for :tr, upload do %>
+  <td><%= upload.filename %></td>
+  <td><%= upload.created_at.to_s(:db) %></td>
+  <td>Pending</td>
+<%- end -%>
