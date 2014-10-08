@@ -6,5 +6,6 @@ class PurchaseTest < ActiveSupport::TestCase
   
   should validate_presence_of :purchaser_id
   should validate_presence_of :item_id
-  should validate_numericality_of :quantity
+  should validate_numericality_of( :quantity ).only_integer
+  should validate_numericality_of( :quantity ).is_greater_than(0)
 end
