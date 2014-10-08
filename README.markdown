@@ -7,6 +7,7 @@
   * Not knowing the preference of web server on the test machine(s), I stuck with WEBrick.
   * The file will be able to be uploaded and processed in the scope of a single request.
   * No styling was created.
+  * Since the upload model is only one field, I did not implement handling for error messages on its form.
 
 
 ## Getting started
