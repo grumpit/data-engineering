@@ -12,8 +12,8 @@ class UploadsControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create
-    assert_response :redirect
+    post :create, upload: {file: fixture_file_upload(Rails.root.join("/example_input.tab"))}
+    assert_redirected_to uploads_path
   end
 
   test "should get index" do
